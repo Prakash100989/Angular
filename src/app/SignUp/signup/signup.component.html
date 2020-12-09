@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+
+<h1 style="text-align: center;">Admin</h1>  
+
+<form [formGroup]="AdminForm" (ngSubmit)="this[EventValue]()" style="margin-left: 430px;
+    width: 373px;">
+
+        
+        <div class="row">
+
+            <table class="table">
+                <tr>
+                    <td>First Name</td>
+                    <td>
+                        <input type="hidden" formControlName="id">
+                        <!-- <input type="text" formControlName="firstName"> -->
+                        <input type="text" formControlName="firstName" placeholder="Enter FirstName"
+                            class="form-control" bsDatepicker>
+                        <div *ngIf="submitted && AdminForm.controls.DocForm.errors" class="text-danger">
+                            <div *ngIf="AdminForm.controls.firstName.errors.required">FirstName is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Last Name</td>
+                    <td>
+                        <input type="text" formControlName="email" placeholder="Enter LastName">
+                        <div *ngIf="submitted && AdminForm.controls.lastName.errors" class="text-danger">
+                            <div *ngIf="AdminForm.controls.lastName.errors.required">Email is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="text" formControlName="email" placeholder="Enter Email">
+                        <div *ngIf="submitted && AdminForm.controls.email.errors" class="text-danger">
+                            <div *ngIf="AdminForm.controls.email.errors.required">Email is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Mobile</td>
+                    <td>
+                        <input type="text" formControlName="mobile" placeholder="Enter Mobile">
+                        <div *ngIf="submitted && AdminForm.controls.mobile.errors" class="text-danger">
+                            <div *ngIf="AdminForm.controls.mobile.errors.required">Mobilr is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>DOB</td>
+                    <td>
+                        <!-- <input type="text" formControlName="appoinmentDate"> -->
+                        <input type="text" formControlName="dob" placeholder=" Date of Birth"
+                            class="form-control" bsDatepicker>
+                        <div *ngIf="submitted && AdminForm.controls.AdminForm.errors" class="text-danger">
+                            <div *ngIf="AdminForm.controls.dob.errors.required">DOB is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="text" formControlName="password" placeholder="Enter Password">
+                        <div *ngIf="submitted && AdminForm.controls.password.errors" class="text-danger">
+                            <div *ngIf="AdminForm.controls.password.errors.required">Password is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Location</td>
+                    <td>
+                        <input type="text" formControlName="location" placeholder="Enter Location">
+                        <div *ngIf="submitted && AdminForm.controls.location.errors" class="text-danger">
+                            <div *ngIf="AdminForm.controls.location.errors.required">Location is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td colspan="2">
+                        <button type="submit" style="width: 216px;
+                        margin-left: 118px;" class="btn btn-primary">{{EventValue}}</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+
+    </form>

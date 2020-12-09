@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+
+<div class="container">
+    <h1>Patient's Page</h1>
+    <form [formGroup]="PatForm" (ngSubmit)="this[EventValue]()" style="margin-left: 430px;
+    width: 373px;">
+
+        <div class="row">
+
+            <table class="table">
+                <tr>
+                    <td>Appoinment1 Date</td>
+                    <td>
+                        <input type="hidden" formControlName="id">
+                        <!-- <input type="text" formControlName="appoinmentDate"> -->
+                        <input type="text" formControlName="appoinmentDate" placeholder="Appointment Date"
+                            class="form-control" bsDatepicker>
+                        <div *ngIf="submitted && PatForm.controls.PatForm.errors" class="text-danger">
+                            <div *ngIf="PatForm.controls.appoinmentDate.errors.required">Date is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Appoinment Time</td>
+                    <td>
+                        <!-- <td><input type="text" formControlName="appoinmentTime"> -->
+                        <input formControlName="appoinmentTime" style="height: 38px; width: 200px; font-style: normal;
+                                    font-size: 15pt;" type="time" id="appt" name="appt" min="09:00" max="18:00"
+                            required>
+                        <div *ngIf="submitted && PatForm.controls.appoinmentTime.errors" class="text-danger">
+                            <div *ngIf="PatForm.controls.appoinmentTime.errors.required">Time is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Location</td>
+                    <td>
+                        <input type="text" formControlName="location">
+                        <div *ngIf="submitted && PatForm.controls.location.errors" class="text-danger">
+                            <div *ngIf="PatForm.controls.location.errors.required">Location is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Doctor</td>
+                    <td>
+                        <input type="text" formControlName="doctor">
+                        <div *ngIf="submitted && PatForm.controls.doctor.errors" class="text-danger">
+                            <div *ngIf="PatForm.controls.doctor.errors.required">Doctor is required</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td colspan="2">
+                        <button type="submit" style="width: 216px;
+    margin-left: 118px;" class="btn btn-primary">{{EventValue}}</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+
+    </form>
+
+</div>
